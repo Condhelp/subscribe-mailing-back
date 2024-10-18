@@ -4,6 +4,7 @@ import { MailOptions } from "nodemailer/lib/json-transport"
 
 import path from "path"
 import fs from "fs"
+
 import Handlebars from "handlebars"
 import { logoBase64 } from "../mailContent/image"
 
