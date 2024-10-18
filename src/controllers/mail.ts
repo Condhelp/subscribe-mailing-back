@@ -20,8 +20,6 @@ export const sendEmail = async (req: Request, res: Response) => {
   }
 
   const mailInfo = {
-    edition: req.body.edition as string,
-    organizer: req.body.organizer as string,
     date: req.body.date as string,
     local: req.body.local as string,
     code: req.body.code as string,
