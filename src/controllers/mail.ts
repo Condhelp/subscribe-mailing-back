@@ -23,6 +23,7 @@ export const sendEmail = async (req: Request, res: Response) => {
   const mailInfo = {
     date: req.body.date as string,
     local: req.body.local as string,
+    localLink: req.body.localLink as string,
     code: req.body.code as string,
     inscriptionDate: req.body.inscriptionDate as string,
     subscriberName: req.body.subscriberName as string,
@@ -61,6 +62,7 @@ export const sendEmail = async (req: Request, res: Response) => {
     logoBase64: logoBase64,
     date: mailInfo.date,
     local: mailInfo.local,
+    localLink: mailInfo.localLink,
     code: mailInfo.code,
     inscriptionDate: mailInfo.inscriptionDate,
     subscriberName: mailInfo.subscriberName,
