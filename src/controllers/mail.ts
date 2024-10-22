@@ -60,19 +60,19 @@ export const sendEmail = async (req: Request, res: Response) => {
   const template = Handlebars.compile(source)
   const replacements = {
     logoBase64: logoBase64,
-    date: mailInfo.date,
-    local: mailInfo.local,
-    localLink: mailInfo.localLink,
-    code: mailInfo.code,
-    inscriptionDate: mailInfo.inscriptionDate,
-    subscriberName: mailInfo.subscriberName,
+    date: mailInfo.date.trim(),
+    local: mailInfo.local.trim(),
+    localLink: mailInfo.localLink.trim(),
+    code: mailInfo.code.trim(),
+    inscriptionDate: mailInfo.inscriptionDate.trim(),
+    subscriberName: mailInfo.subscriberName.trim(),
   }
 
   const html = template(replacements)
 
   const mail: MailOptions = {
     from: "Grupo GT",
-    to: mailInfo.subscriberEmail,
+    to: mailInfo.subscriberEmail.trim(),
     subject: `CONDHELP - Confirmação de inscrição!`,
     html: html,
   }
